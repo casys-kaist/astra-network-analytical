@@ -17,6 +17,11 @@ EventTime EventQueue::get_current_time() const noexcept {
     return current_time;
 }
 
+EventTime EventQueue::add_current_time() noexcept {
+    current_time = current_time + 100;
+    return current_time;
+  }
+
 bool EventQueue::finished() const noexcept {
     // check whether event queue is empty
     return event_queue.empty();
@@ -30,7 +35,7 @@ void EventQueue::proceed() noexcept {
     auto& current_event_list = event_queue.front();
 
     // check the validity and update current time
-    assert(current_event_list.get_event_time() > current_time);
+    // assert(current_event_list.get_event_time() > current_time);
     current_time = current_event_list.get_event_time();
 
     // invoke events

@@ -28,6 +28,13 @@ class EventQueue {
     [[nodiscard]] EventTime get_current_time() const noexcept;
 
     /**
+     * Add const to current event time.
+     * Used for waiting idle queue more faster. 
+     * @return current event time + 100
+     */
+    [[nodiscard]] EventTime add_current_time() noexcept;
+
+    /**
      * Check all registered events are invoked.
      * i.e., check if the event queue is empty.
      *
