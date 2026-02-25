@@ -17,9 +17,8 @@ EventTime EventQueue::get_current_time() const noexcept {
     return current_time;
 }
 
-EventTime EventQueue::add_current_time() noexcept {
-    current_time = current_time + 100;
-    return current_time;
+void EventQueue::add_current_time() noexcept {
+    current_time = current_time + 1000000;
   }
 
 bool EventQueue::finished() const noexcept {

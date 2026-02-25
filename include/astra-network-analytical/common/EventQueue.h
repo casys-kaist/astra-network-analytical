@@ -32,7 +32,7 @@ class EventQueue {
      * Used for waiting idle queue more faster. 
      * @return current event time + 100
      */
-    [[nodiscard]] EventTime add_current_time() noexcept;
+    void add_current_time() noexcept;
 
     /**
      * Check all registered events are invoked.
